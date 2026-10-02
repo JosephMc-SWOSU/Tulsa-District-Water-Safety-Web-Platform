@@ -11,7 +11,7 @@ No build tools or server-side code are required. Open `index.html` in a browser,
 1. Push the site files to the GitHub repository.
 2. Open **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the `testing` branch and the `/ (root)` folder, then choose **Save**.
+4. Select the `main` branch and the `/ (root)` folder, then choose **Save**.
 
 The site has no build step. GitHub Pages serves `index.html`, `styles.css`, `script.js`, and `assets/` directly. All internal links use relative paths, so the site works from a project page URL such as `https://usaceswosu.github.io/Tulsa-District-Water-Safety-Web-Platform/`.
 
