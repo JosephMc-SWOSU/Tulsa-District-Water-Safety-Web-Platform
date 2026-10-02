@@ -157,15 +157,28 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-const safetyLanguageToggle = document.querySelector("#safety-language-toggle");
+const headerLanguageToggle = document.querySelector("#header-language-toggle");
 const spanishSafetyCopy = [...document.querySelectorAll(".spanish-copy")];
-safetyLanguageToggle.addEventListener("click", () => {
-  const showSpanish = safetyLanguageToggle.getAttribute("aria-expanded") !== "true";
-  safetyLanguageToggle.setAttribute("aria-expanded", String(showSpanish));
+const safetyLanguageHint = document.querySelector("#safety-language-hint");
+headerLanguageToggle.addEventListener("click", () => {
+  const showSpanish = headerLanguageToggle.getAttribute("aria-pressed") !== "true";
+  headerLanguageToggle.setAttribute("aria-pressed", String(showSpanish));
+  headerLanguageToggle.setAttribute("aria-label", showSpanish ? "Hide Spanish safety translations" : "Show Spanish safety translations");
+  headerLanguageToggle.title = showSpanish ? "Hide Spanish safety translations" : "Show Spanish safety translations";
+  headerLanguageToggle.querySelector(".language-code").textContent = showSpanish ? "EN" : "ES";
+  const languageName = headerLanguageToggle.querySelector(".language-name");
+  languageName.textContent = showSpanish ? "English" : "Español";
+  languageName.lang = showSpanish ? "en" : "es";
   spanishSafetyCopy.forEach((copy) => { copy.hidden = !showSpanish; });
-  safetyLanguageToggle.textContent = showSpanish
-    ? "Hide Spanish translations / Ocultar español"
-    : "Show Spanish translations / Ver en español";
+  safetyLanguageHint.textContent = showSpanish
+    ? "Spanish translations are shown beneath each reminder. They are draft copy pending district review."
+    : "Use the Español control in the header menu to show Spanish translations for these safety reminders.";
+  if (menuToggle.getAttribute("aria-expanded") === "true") {
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+    siteNav.classList.remove("is-open");
+  }
+  document.querySelector("#safety-title").focus();
 });
 
 const themeToggle = document.querySelector("#theme-toggle");
