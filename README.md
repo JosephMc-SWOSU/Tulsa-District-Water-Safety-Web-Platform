@@ -1,16 +1,22 @@
-# Tulsa District Water Safety
+# Bobber the Water Safety Dog — Tulsa District
 
-The Bobber the Water Safety Dog website for the U.S. Army Corps of Engineers Tulsa District.
+A responsive, static website that brings together Bobber the Water Safety Dog resources and water safety information for the U.S. Army Corps of Engineers Tulsa District. It consolidates the Bobber program page and cartoons/graphics library into one accessible, searchable experience.
 
 ## Run locally
 
-This is a static GitHub Pages site. Open `index.html` directly, or serve the repository with any static web server.
+No build tools or server-side code are required. Open `index.html` in a browser, or serve this folder with any static web server. Resource PDFs and thumbnail artwork are stored in `assets/` and load locally.
 
 ## Publish with GitHub Pages
 
-1. Push the repository to GitHub.
+1. Push the site files to the GitHub repository.
 2. Open **Settings → Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Select the `testing` branch and the `/ (root)` folder, then select **Save**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the `testing` branch and the `/ (root)` folder, then choose **Save**.
 
-The site has no build step. `index.html`, `styles.css`, `script.js`, and the `assets` folder are all served as-is.
+The site has no build step. GitHub Pages serves `index.html`, `styles.css`, `script.js`, and `assets/` directly. All internal links use relative paths, so the site works from a project page URL such as `https://usaceswosu.github.io/Tulsa-District-Water-Safety-Web-Platform/`.
+
+## Updating resources
+
+Add the PDF to `assets/` and its preview image to `assets/graphics/`, then add an entry to the `resources` list in `script.js`. Use the exact filenames (including spaces and punctuation); the site URL-encodes them when creating links.
+
+External video and official program links point to YouTube and USACE websites. The safety reminders are educational and do not replace local rules, adult supervision, or professional guidance.
