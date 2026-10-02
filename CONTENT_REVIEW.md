@@ -1,12 +1,14 @@
 # Pre-publication content and accessibility review
 
-This checklist is for district staff reviewing the Bobber water-safety site before it is treated as an official public resource. The Spanish safety-card translations are drafts and have **not** been approved by USACE.
+This checklist is for district staff reviewing the Bobber water-safety site before it is treated as an official public resource. The Spanish interface, safety content, and companion PDFs are draft translations and have **not** been approved by USACE. Translated resource titles are for navigation; PDFs without a Spanish companion remain in their original language.
 
 ## Water-safety content
 
 - [ ] Have a Tulsa District water-safety subject-matter reviewer verify each safety reminder, including life-jacket wording, cold-water advice, and the “reach or throw, don’t go” rescue guidance.
 - [ ] Confirm the emergency instructions and any local safety guidance are appropriate for the district's audiences and current policy.
-- [ ] Have a fluent Spanish reviewer check the four Spanish translations for accuracy, reading level, and regional usage. Approve them with the water-safety reviewer before removing the draft labels.
+- [ ] Have a fluent Spanish reviewer check the full Spanish interface and safety translations for accuracy, reading level, and regional usage. Approve them with the water-safety reviewer before describing them as approved.
+- [ ] Review `assets/spanish/Bobber InVest in Safety - Spanish draft.pdf` and `assets/spanish/Fishing is Best in a Life Vest - Spanish draft.pdf`; verify the safety wording and that the simplified layouts accurately represent the source messages.
+- [ ] Check the older bilingual source PDFs for Spanish spelling/wording issues before directing Spanish-speaking visitors to them.
 - [ ] Confirm the lake-level notice is clear: water-control data is not a measure of water quality, beach status, or swimming safety.
 
 ## Tulsa District and program links

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-  <script>document.documentElement.dataset.theme = localStorage.getItem("bobber-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");</script>
+  <script>document.documentElement.dataset.theme = localStorage.getItem("bobber-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.dataset.locale = localStorage.getItem("bobber-language") || "en";</script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,7 +21,6 @@
         <img class="brand-logo" src="assets/bobber-logo.png" alt="">
         <span class="brand-copy"><strong>Bobber</strong><small>Water Safety Dog</small></span>
       </a>
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="#meet-bobber">Meet Bobber</a>
         <a href="#safety">Stay safe</a>
@@ -30,9 +29,12 @@
         <a href="#resources">Free resources</a>
         <a href="#educators">For educators</a>
         <a class="nav-cta" href="#resources">Explore the library <span aria-hidden="true">↗</span></a>
-        <button class="header-language-toggle" id="header-language-toggle" type="button" aria-label="Show Spanish safety translations" aria-pressed="false" aria-controls="safety-es-lifejacket safety-es-buddy safety-es-rescue safety-es-cold"><span class="language-code" aria-hidden="true">ES</span><span class="language-name" lang="es">Español</span></button>
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">Dark</span></button>
       </nav>
+      <div class="header-tools">
+        <button class="header-language-toggle" id="header-language-toggle" type="button" aria-label="Switch to Spanish / Cambiar a español" aria-pressed="false" aria-controls="main"><span class="language-code" aria-hidden="true">ES</span><span class="language-name" lang="es">Español</span></button>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">Dark</span></button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
@@ -147,7 +149,7 @@
         <p class="results-message" id="results-message" aria-live="polite"></p>
         <div class="resource-grid" id="resource-grid"></div>
         <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">🐾</span><h3>No matching resources</h3><p>Try another search or choose a different category.</p><button class="reset-search" id="reset-search" type="button">Show everything</button></div>
-        <p class="library-note">These printable materials are shared by the <a href="https://corpslakes.erdc.dren.mil/employees/watersafety/graphics.cfm?Option=Cartoons" target="_blank" rel="noopener noreferrer">USACE National Water Safety Program</a>. Select a card to open its PDF.</p>
+        <p class="library-note">These printable materials are shared by the <a href="https://corpslakes.erdc.dren.mil/employees/watersafety/graphics.cfm?Option=Cartoons" target="_blank" rel="noopener noreferrer">USACE National Water Safety Program</a>. Select a card to open its PDF. Spanish draft versions are available for some posters; other PDFs and previews may remain in their original language.</p>
       </div>
     </section>
 
