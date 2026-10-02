@@ -513,6 +513,14 @@ easterDialog.addEventListener("click", (event) => {
 
 const konamiSequence = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 let konamiProgress = 0;
+function normalizeKonamiKey(event) {
+  const codeKeys = { Numpad8: "ArrowUp", Numpad2: "ArrowDown", Numpad4: "ArrowLeft", Numpad6: "ArrowRight", KeyB: "b", KeyA: "a" };
+  const legacyKeys = { 38: "ArrowUp", 40: "ArrowDown", 37: "ArrowLeft", 39: "ArrowRight", 66: "b", 65: "a" };
+  if (konamiSequence.includes(event.key)) return event.key;
+  if (event.key.length === 1 && konamiSequence.includes(event.key.toLowerCase())) return event.key.toLowerCase();
+  return codeKeys[event.code] || legacyKeys[event.which || event.keyCode] || event.key;
+}
+
 document.addEventListener("keydown", (event) => {
   if (easterDialog.open || event.repeat || event.altKey || event.ctrlKey || event.metaKey) return;
   const active = document.activeElement;
@@ -520,7 +528,7 @@ document.addEventListener("keydown", (event) => {
     konamiProgress = 0;
     return;
   }
-  const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+  const key = normalizeKonamiKey(event);
   if (key === konamiSequence[konamiProgress]) {
     konamiProgress += 1;
     if (konamiProgress === konamiSequence.length) {
