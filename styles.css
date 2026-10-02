@@ -158,5 +158,16 @@ html[data-theme="dark"] .easter-close:hover{background:#263b3d}
 @keyframes easter-pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes easter-confetti-fall{0%{transform:translateY(-5px) rotate(var(--turn));opacity:0}15%{opacity:1}100%{transform:translateY(360px) rotate(calc(var(--turn) + 220deg));opacity:0}}
 @media(max-width:480px){.easter-dialog{padding:31px 23px 24px}.easter-dialog h2{font-size:27px}.easter-dialog #easter-copy{font-size:13px}}
+html[data-theme="light"] .hero{background:#f2f8f5;color:var(--deep)}
+html[data-theme="light"] .hero:before{background:radial-gradient(ellipse at 72% 48%,#ffffff 0,transparent 48%),linear-gradient(112deg,#f5faf7 0%,#eef7f3 55%,#e8f4ef 100%)}
+html[data-theme="light"] .eyebrow{color:#315f5a}
+html[data-theme="light"] .hero h1{color:#123c45}
+html[data-theme="light"] .hero h1 span{color:#167e79}
+html[data-theme="light"] .hero-description{color:#405e59}
+html[data-theme="light"] .text-link-light{color:#176f69}
+html[data-theme="light"] .hero-note{color:#4b6963}
+html[data-theme="light"] .hero-watermark{color:#123c4510}
+html[data-theme="light"] .hero-ripple{opacity:.3}
+html[data-theme="light"] .hero-ripple span{border-top-color:#45998e}
 @media(prefers-reduced-motion:reduce){.easter-dialog[open],.easter-confetti i{animation:none!important}.easter-confetti i{opacity:.35}}
 :root{--sans:system-ui,"Segoe UI",Arial,sans-serif;--display:"Trebuchet MS",system-ui,"Segoe UI",sans-serif}
