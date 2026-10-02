@@ -145,10 +145,27 @@ siteNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", (
   siteNav.classList.remove("is-open");
 }));
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+    siteNav.classList.remove("is-open");
+    menuToggle.focus();
+  }
   if (event.key === "/" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
     event.preventDefault();
     searchInput.focus();
   }
+});
+
+const safetyLanguageToggle = document.querySelector("#safety-language-toggle");
+const spanishSafetyCopy = [...document.querySelectorAll(".spanish-copy")];
+safetyLanguageToggle.addEventListener("click", () => {
+  const showSpanish = safetyLanguageToggle.getAttribute("aria-expanded") !== "true";
+  safetyLanguageToggle.setAttribute("aria-expanded", String(showSpanish));
+  spanishSafetyCopy.forEach((copy) => { copy.hidden = !showSpanish; });
+  safetyLanguageToggle.textContent = showSpanish
+    ? "Hide Spanish translations / Ocultar español"
+    : "Show Spanish translations / Ver en español";
 });
 
 const themeToggle = document.querySelector("#theme-toggle");
@@ -174,3 +191,13 @@ themeToggle.addEventListener("click", () => {
 updateThemeControl();
 
 renderResources();
+
+document.querySelectorAll('a[target="_blank"]:not([aria-label])').forEach((link) => {
+  const label = [...link.childNodes]
+    .map((node) => node.nodeType === Node.ELEMENT_NODE && node.hasAttribute("aria-hidden") ? "" : node.textContent)
+    .join(" ")
+    .replace(/[↗→]\s*$/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (label) link.setAttribute("aria-label", `${label} (opens in a new tab)`);
+});

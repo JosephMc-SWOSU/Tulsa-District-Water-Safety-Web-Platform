@@ -1,6 +1,6 @@
 # Bobber the Water Safety Dog — Tulsa District
 
-A responsive, static website that brings together Bobber the Water Safety Dog resources and water safety information for the U.S. Army Corps of Engineers Tulsa District. It consolidates the Bobber program page and cartoons/graphics library into one accessible, searchable experience.
+A responsive, static website that brings together Bobber the Water Safety Dog resources and water safety information for the U.S. Army Corps of Engineers Tulsa District. It consolidates the Bobber program page and cartoons/graphics library into one searchable, accessibility-minded experience.
 
 ## Run locally
 
@@ -20,3 +20,7 @@ The site has no build step. GitHub Pages serves `index.html`, `styles.css`, `scr
 Add the PDF to `assets/` and its preview image to `assets/graphics/`, then add an entry to the `resources` list in `script.js`. Use the exact filenames (including spaces and punctuation); the site URL-encodes them when creating links.
 
 External video and official program links point to YouTube and USACE websites. The safety reminders are educational and do not replace local rules, adult supervision, or professional guidance.
+
+## Before official publication
+
+The Spanish water-safety translations are draft copy and need review by a fluent Spanish speaker and a district water-safety reviewer. See [CONTENT_REVIEW.md](CONTENT_REVIEW.md) for the content, link, branding, and accessibility review checklist. This site has not yet had a formal Section 508 / WCAG conformance review.
