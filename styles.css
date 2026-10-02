@@ -159,3 +159,4 @@ html[data-theme="dark"] .easter-close:hover{background:#263b3d}
 @keyframes easter-confetti-fall{0%{transform:translateY(-5px) rotate(var(--turn));opacity:0}15%{opacity:1}100%{transform:translateY(360px) rotate(calc(var(--turn) + 220deg));opacity:0}}
 @media(max-width:480px){.easter-dialog{padding:31px 23px 24px}.easter-dialog h2{font-size:27px}.easter-dialog #easter-copy{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.easter-dialog[open],.easter-confetti i{animation:none!important}.easter-confetti i{opacity:.35}}
+:root{--sans:system-ui,"Segoe UI",Arial,sans-serif;--display:"Trebuchet MS",system-ui,"Segoe UI",sans-serif}
