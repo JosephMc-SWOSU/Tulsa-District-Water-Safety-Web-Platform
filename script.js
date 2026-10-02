@@ -24,7 +24,7 @@ const resources = [
   { title: "Bobber Happy Friday", category: "poster", file: "Bobber Happy Friday Poster and Coloring Sheet.pdf", image: "Bobber Happy Friday Poster and Coloring Sheet_th_L7cc.png" },
   { title: "Bobber Happy New Year", category: "poster", file: "Bobber Happy New Year Poster and Coloring Sheet.pdf", image: "Bobber Happy New Year Poster and Coloring Sheet_th_L7cc.png" },
   { title: "Bobber Inflatable Toys", category: "poster", file: "Bobber Inflatable Toys Poster and Coloring Sheet.pdf", image: "Bobber Inflatable Toys Poster and Coloring Sheet_th_L7cc.png" },
-  { title: "Bobber InVest in Safety", category: "poster", file: "Bobber_InVest_in_Safety_Poster&Coloring.pdf", spanishFile: "spanish/Bobber InVest in Safety - Spanish draft.pdf", image: "Bobber_InVest_in_Safety_Poster&Coloring_th_L7cc.png" },
+  { title: "Bobber InVest in Safety", category: "poster", file: "Bobber_InVest_in_Safety_Poster&Coloring.pdf", image: "Bobber_InVest_in_Safety_Poster&Coloring_th_L7cc.png" },
   { title: "Bobber Life Jacket", category: "poster", file: "Bobber Life Jacket Coloring Sheet.pdf", image: "Bobber Life Jacket Coloring Sheet_th_L7cc.png" },
   { title: "Bobber Paddling", category: "poster", file: "Bobber Paddling Poster and Coloring Sheet.pdf", image: "Bobber Paddling Poster and Coloring Sheet_th_L7cc.png" },
   { title: "Bobber Pals", category: "poster", file: "Bobber Pals Posters and Coloring Sheets.pdf", image: "Bobber Pals Posters and Coloring Sheets_th_L7cc.png" },
@@ -35,7 +35,7 @@ const resources = [
   { title: "Bobber St. Patrick’s Day", category: "poster", file: "Bobber St. Patrick's Day Poster and Coloring Sheet.pdf", image: "Bobber St. Patrick's Day Poster and Coloring Sheet_th_L7cc.png" },
   { title: "Bobber Swim with a Buddy", category: "poster", file: "Bobber Swim with a Buddy Poster and Coloring Sheet.pdf", image: "Bobber Swim with a Buddy Poster and Coloring Sheet_th_L7cc.png" },
   { title: "Bobber Thanksgiving", category: "poster", file: "Bobber Thanksgiving Poster and Coloring Sheet.pdf", image: "Bobber Thanksgiving Poster and Coloring Sheet_th_L7cc.png" },
-  { title: "Fishing Is Best in a Life Vest", category: "poster", file: "Fishing is Best in a Life Vest Poster&Coloing.pdf", spanishFile: "spanish/Fishing is Best in a Life Vest - Spanish draft.pdf", image: "Fishing is Best in a Life Vest Poster&Coloing_th_L7cc.png" },
+  { title: "Fishing Is Best in a Life Vest", category: "poster", file: "Fishing is Best in a Life Vest Poster&Coloing.pdf", image: "Fishing is Best in a Life Vest Poster&Coloing_th_L7cc.png" },
   { title: "A Holiday Visit from Bobber", category: "storybook", file: "241210-A-GC580-0001_Bobber_Hoilday_Book.pdf", image: "Bobber_Hoilday_Book_tb_L7cc.png" },
   { title: "Bobber Activity Book", category: "storybook", file: "Bobber Activity Book.pdf", image: "Bobber Activity Book_th_L7cc.png" },
   { title: "Bobber Fun Book", category: "storybook", file: "Bobber_Fun_Book_Printable.pdf", image: "Bobber_Fun_Book_Printable_Version_th_L7cc.png" },
@@ -195,7 +195,7 @@ const spanishText = {
   "Show everything": "Mostrar todos los recursos",
   "These printable materials are shared by the": "Estos materiales para imprimir son del",
   "USACE National Water Safety Program": "Programa Nacional de Seguridad Acuática de USACE",
-  ". Select a card to open its PDF. Spanish draft versions are available for some posters; other PDFs and previews may remain in their original language.": ". Selecciona una tarjeta para abrir su PDF. Algunos afiches tienen un borrador en español; otros PDF y miniaturas pueden conservar el idioma original.",
+  ". Select a card to open its PDF. Check each file for available languages.": ". Selecciona una tarjeta para abrir su PDF. Revisa cada archivo para confirmar los idiomas disponibles.",
   "Bring Bobber to your program": "Lleva a Bobber a tu programa",
   "For educators & outreach teams.": "Para educadores y equipos de divulgación.",
   "Official USACE teaching and program materials for educators, lake staff, and community partners.": "Materiales oficiales de USACE para educadores, personal de los lagos y colaboradores comunitarios.",
@@ -267,39 +267,21 @@ function makeCard(resource) {
   body.className = "resource-body";
   const title = document.createElement("h3");
   title.textContent = displayTitle;
-  const spanishDraft = currentLanguage === "es" && resource.spanishFile;
   const link = document.createElement("a");
   link.className = "resource-link";
-  link.href = assetPath(spanishDraft ? resource.spanishFile : resource.file);
+  link.href = assetPath(resource.file);
   link.target = "_blank";
   link.rel = "noopener";
-  link.setAttribute("aria-label", spanishDraft ? `Abrir el PDF en español de ${displayTitle}; borrador, en una pestaña nueva` : currentLanguage === "es" ? `Abrir el PDF de ${displayTitle} en una pestaña nueva` : `Open ${resource.title} PDF in a new tab`);
+  link.setAttribute("aria-label", currentLanguage === "es" ? `Abrir el PDF de ${displayTitle} en una pestaña nueva` : `Open ${resource.title} PDF in a new tab`);
   const linkLabel = document.createElement("span");
-  linkLabel.textContent = spanishDraft
-    ? "PDF en español · borrador"
-    : currentLanguage === "es"
-      ? (resource.category === "storybook" ? "Leer el cuento" : "Abrir PDF para imprimir")
+  linkLabel.textContent = currentLanguage === "es"
+    ? (resource.category === "storybook" ? "Leer el cuento" : "Abrir PDF para imprimir")
     : (resource.category === "storybook" ? "Read the story" : "Open printable PDF");
   const arrow = document.createElement("span");
   arrow.setAttribute("aria-hidden", "true");
   arrow.textContent = "↗";
   link.append(linkLabel, arrow);
   body.append(title, link);
-  if (resource.spanishFile) {
-    const alternateLink = document.createElement("a");
-    alternateLink.className = "resource-link resource-link-alternate";
-    alternateLink.href = assetPath(spanishDraft ? resource.file : resource.spanishFile);
-    alternateLink.target = "_blank";
-    alternateLink.rel = "noopener";
-    const alternateLabel = document.createElement("span");
-    alternateLabel.textContent = spanishDraft ? "Original en inglés" : "Spanish draft PDF";
-    alternateLink.setAttribute("aria-label", spanishDraft ? `Abrir el PDF original en inglés de ${displayTitle} (se abre en una pestaña nueva)` : `Open the Spanish draft PDF for ${resource.title} (opens in a new tab)`);
-    const alternateArrow = document.createElement("span");
-    alternateArrow.setAttribute("aria-hidden", "true");
-    alternateArrow.textContent = "↗";
-    alternateLink.append(alternateLabel, alternateArrow);
-    body.append(alternateLink);
-  }
   article.append(preview, body);
   return article;
 }

@@ -4,7 +4,7 @@ A responsive, static website that brings together Bobber the Water Safety Dog re
 
 ## Run locally
 
-No build tools or server-side code are required. Open `index.html` in a browser, or serve this folder with any static web server. Resource PDFs, Spanish companion drafts, thumbnail artwork, and the Bobber logo (`assets/bobber-logo.png`) are stored in `assets/` and load locally.
+No build tools or server-side code are required. Open `index.html` in a browser, or serve this folder with any static web server. Resource PDFs, thumbnail artwork, and the Bobber logo (`assets/bobber-logo.png`) are stored in `assets/` and load locally.
 
 ## Publish with GitHub Pages
 
@@ -23,4 +23,4 @@ External video and official program links point to YouTube and USACE websites. T
 
 ## Before official publication
 
-The Spanish interface, water-safety content, and companion PDFs are draft translations and need review by a fluent Spanish speaker and a district water-safety reviewer. The InVest and fishing companion PDFs are simplified re-layouts; the English originals remain unchanged. The resource titles are translated for navigation, but other linked PDFs may remain in their original language. Printable source HTML is in `print-sources/spanish/`. See [CONTENT_REVIEW.md](CONTENT_REVIEW.md) for the content, link, branding, and accessibility review checklist. This site has not yet had a formal Section 508 / WCAG conformance review.
+The Spanish interface and water-safety content are draft translations and need review by a fluent Spanish speaker and a district water-safety reviewer. The resource titles are translated for navigation, but linked PDFs remain the original files. See [CONTENT_REVIEW.md](CONTENT_REVIEW.md) for the content, link, branding, and accessibility review checklist. This site has not yet had a formal Section 508 / WCAG conformance review.
