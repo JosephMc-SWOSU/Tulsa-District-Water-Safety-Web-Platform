@@ -4,7 +4,7 @@ A responsive, static website that brings together Bobber the Water Safety Dog re
 
 ## Run locally
 
-No build tools or server-side code are required. Open `index.html` in a browser, or serve this folder with any static web server. Resource PDFs and thumbnail artwork are stored in `assets/` and load locally.
+No build tools or server-side code are required. Open `index.html` in a browser, or serve this folder with any static web server. Resource PDFs, thumbnail artwork, and the Bobber logo (`assets/bobber-logo.png`) are stored in `assets/` and load locally.
 
 ## Publish with GitHub Pages
 
