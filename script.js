@@ -456,6 +456,7 @@ function setLanguage(language) {
   renderResources();
   updateThemeControl();
   updateExternalLinkLabels();
+  updateEasterDialogLanguage();
 }
 
 headerLanguageToggle.addEventListener("click", () => {
@@ -476,6 +477,64 @@ function updateThemeControl() {
   themeLabel.textContent = currentLanguage === "es" ? (isDark ? "Claro" : "Oscuro") : (isDark ? "Light" : "Dark");
   document.querySelector('meta[name="theme-color"]').content = isDark ? "#101c20" : "#123c45";
 }
+
+const easterDialog = document.querySelector("#easter-dialog");
+const easterConfetti = document.querySelector("#easter-confetti");
+function updateEasterDialogLanguage() {
+  const isSpanish = currentLanguage === "es";
+  document.querySelector("#easter-kicker").textContent = isSpanish ? "Misión secreta desbloqueada" : "Secret mission unlocked";
+  document.querySelector("#easter-title").textContent = isSpanish ? "¡Encontraste a Bobber!" : "You found Bobber!";
+  document.querySelector("#easter-copy").textContent = isSpanish
+    ? "Tu misión secreta: ve con un compañero, usa un chaleco salvavidas y comparte un consejo de seguridad acuática."
+    : "Your secret mission: bring a buddy, wear a life jacket, and share one water-safety tip.";
+  document.querySelector("#easter-return-label").textContent = isSpanish ? "Volver a la aventura" : "Back to the adventure";
+  document.querySelector("#easter-close").setAttribute("aria-label", isSpanish ? "Cerrar la misión secreta" : "Close secret mission");
+  document.querySelector(".easter-logo").alt = isSpanish ? "Logotipo de Bobber, el perro de seguridad acuática" : "Bobber the Water Safety Dog logo";
+}
+
+function addEasterEggConfetti() {
+  const colors = ["#f17658", "#f7d978", "#167e79", "#73bed0", "#e45b71"];
+  const pieces = Array.from({ length: 20 }, (_, index) => {
+    const piece = document.createElement("i");
+    piece.style.setProperty("--x", `${(index * 47 + 3) % 100}%`);
+    piece.style.setProperty("--delay", `${(index % 7) * 0.055}s`);
+    piece.style.setProperty("--turn", `${index * 53}deg`);
+    piece.style.setProperty("--piece", colors[index % colors.length]);
+    return piece;
+  });
+  easterConfetti.replaceChildren(...pieces);
+}
+
+document.querySelector("#easter-close").addEventListener("click", () => easterDialog.close());
+document.querySelector("#easter-return").addEventListener("click", () => easterDialog.close());
+easterDialog.addEventListener("click", (event) => {
+  if (event.target === easterDialog) easterDialog.close();
+});
+
+const konamiSequence = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+let konamiProgress = 0;
+document.addEventListener("keydown", (event) => {
+  if (easterDialog.open || event.repeat || event.altKey || event.ctrlKey || event.metaKey) return;
+  const active = document.activeElement;
+  if (active?.matches("input, textarea, select, [contenteditable='true'], [role='textbox']")) {
+    konamiProgress = 0;
+    return;
+  }
+  const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+  if (key === konamiSequence[konamiProgress]) {
+    konamiProgress += 1;
+    if (konamiProgress === konamiSequence.length) {
+      konamiProgress = 0;
+      event.preventDefault();
+      updateEasterDialogLanguage();
+      addEasterEggConfetti();
+      easterDialog.showModal();
+      document.querySelector("#easter-close").focus();
+    }
+    return;
+  }
+  konamiProgress = key === konamiSequence[0] ? 1 : 0;
+});
 
 themeToggle.addEventListener("click", () => {
   const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
