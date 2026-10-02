@@ -7,7 +7,16 @@
   <meta name="description" content="Meet Bobber the Water Safety Dog. Explore family-friendly water safety videos, printable activities, posters, coloring sheets, and storybooks from the U.S. Army Corps of Engineers Tulsa District.">
   <title>Bobber the Water Safety Dog | Tulsa District, USACE</title>
   <link rel="icon" type="image/png" href="assets/bobber-logo.png">
-  <script>document.documentElement.dataset.theme = localStorage.getItem("bobber-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.dataset.locale = localStorage.getItem("bobber-language") || "en";</script>
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("bobber-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.locale = localStorage.getItem("bobber-language") || "en";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+      document.documentElement.dataset.locale = "en";
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -69,30 +78,94 @@
     </section>
 
     <section class="quick-strip" aria-label="Explore the site">
-      <a href="#safety"><span class="quick-icon">01</span><span><strong>Start safe</strong><small>Simple habits that matter</small></span><b aria-hidden="true">↗</b></a>
-      <a href="#videos"><span class="quick-icon">02</span><span><strong>Watch & learn</strong><small>Cartoons in English & Spanish</small></span><b aria-hidden="true">↗</b></a>
-      <a href="#resources"><span class="quick-icon">03</span><span><strong>Print & play</strong><small>Free Bobber activities</small></span><b aria-hidden="true">↗</b></a>
+      <a href="#safety">
+        <span class="quick-icon">01</span>
+        <span><strong>Start safe</strong><small>Simple habits that matter</small></span>
+        <b aria-hidden="true">↗</b>
+      </a>
+      <a href="#videos">
+        <span class="quick-icon">02</span>
+        <span><strong>Watch & learn</strong><small>Cartoons in English & Spanish</small></span>
+        <b aria-hidden="true">↗</b>
+      </a>
+      <a href="#resources">
+        <span class="quick-icon">03</span>
+        <span><strong>Print & play</strong><small>Free Bobber activities</small></span>
+        <b aria-hidden="true">↗</b>
+      </a>
     </section>
 
     <section class="intro section-wrap" id="meet-bobber">
-      <div class="intro-label"><span class="section-kicker">Your water safety sidekick</span><span class="intro-line"></span></div>
+      <div class="intro-label">
+        <span class="section-kicker">Your water safety sidekick</span>
+        <span class="intro-line"></span>
+      </div>
       <div class="intro-content">
         <h2>Good dogs know:<br><em>water safety comes first.</em></h2>
-        <div class="intro-text"><p>Bobber helps young people learn how to enjoy lakes, rivers, pools, and beaches more safely. His advice is easy to remember, and even easier to share with your family.</p><a class="text-link" href="#resources">Find something fun to print <span aria-hidden="true">→</span></a><div class="bobber-note"><img src="assets/graphics/Bobber_Birthday_Story_tb_L7cc.png" alt="Bobber the Water Safety Dog with Ranger Buck"><span><small>Meet your lake-day buddy</small><strong>Bobber’s got your back.</strong></span></div></div>
+        <div class="intro-text">
+          <p>Bobber helps young people learn how to enjoy lakes, rivers, pools, and beaches more safely. His advice is easy to remember, and even easier to share with your family.</p>
+          <a class="text-link" href="#resources">Find something fun to print <span aria-hidden="true">→</span></a>
+          <div class="bobber-note">
+            <img src="assets/graphics/Bobber_Birthday_Story_tb_L7cc.png" alt="Bobber the Water Safety Dog with Ranger Buck">
+            <span><small>Meet your lake-day buddy</small><strong>Bobber’s got your back.</strong></span>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="safety-section" id="safety" aria-labelledby="safety-title">
       <div class="section-wrap safety-inner">
         <div class="safety-heading">
-          <div><span class="section-kicker">Bobber’s water-wise reminders</span><h2 id="safety-title" tabindex="-1">Make safety<br>part of the fun.</h2></div>
-          <div class="safety-heading-copy"><p>A few good habits go a long way. Talk through these reminders before your next day near the water.</p><p class="safety-language-hint" id="safety-language-hint">Use the Español control in the header menu to show Spanish translations for these safety reminders.</p></div>
+          <div>
+            <span class="section-kicker">Bobber’s water-wise reminders</span>
+            <h2 id="safety-title" tabindex="-1">Make safety<br>part of the fun.</h2>
+          </div>
+          <div class="safety-heading-copy">
+            <p>A few good habits go a long way. Talk through these reminders before your next day near the water.</p>
+            <p class="safety-language-hint" id="safety-language-hint">Use the Español control in the header menu to show Spanish translations for these safety reminders.</p>
+          </div>
         </div>
         <div class="safety-grid">
-          <article class="safety-card"><span class="safety-number" aria-hidden="true">01</span><span class="safety-symbol" aria-hidden="true">◉</span><h3>Wear your life jacket</h3><p>Wear a properly fitted, U.S. Coast Guard-approved life jacket when you’re in, on, or around open water.</p><div class="spanish-copy" id="safety-es-lifejacket" lang="es" hidden><span>ESPAÑOL · BORRADOR</span><p><strong>Usa tu chaleco salvavidas.</strong> Debe ser de la talla correcta y estar aprobado por la Guardia Costera de EE. UU. Úsalo dentro, sobre o cerca de aguas abiertas.</p></div></article>
-          <article class="safety-card"><span class="safety-number" aria-hidden="true">02</span><span class="safety-symbol" aria-hidden="true">⌁</span><h3>Swim with a buddy</h3><p>Choose a designated swimming area, follow posted rules, and make sure a responsible adult is watching.</p><div class="spanish-copy" id="safety-es-buddy" lang="es" hidden><span>ESPAÑOL · BORRADOR</span><p><strong>Nada acompañado.</strong> Elige una zona designada para nadar, sigue las reglas publicadas y asegúrate de que un adulto responsable te vigile.</p></div></article>
-          <article class="safety-card"><span class="safety-number" aria-hidden="true">03</span><span class="safety-symbol" aria-hidden="true">↗</span><h3>Reach or throw. Don’t go.</h3><p>If someone is in trouble, get an adult and call 911. Reach with something long or throw something that floats—don’t enter the water.</p><div class="spanish-copy" id="safety-es-rescue" lang="es" hidden><span>ESPAÑOL · BORRADOR</span><p><strong>Alcanza o lanza; no te metas.</strong> Si alguien está en peligro, avisa a un adulto y llama al 911. Extiende algo largo o lanza algo que flote. No entres al agua.</p></div></article>
-          <article class="safety-card"><span class="safety-number" aria-hidden="true">04</span><span class="safety-symbol" aria-hidden="true">❄</span><h3>Respect cold water</h3><p>Cold water can be dangerous even on a warm day. Dress for the water, stay alert, and don’t take chances.</p><div class="spanish-copy" id="safety-es-cold" lang="es" hidden><span>ESPAÑOL · BORRADOR</span><p><strong>Ten cuidado con el agua fría.</strong> Puede ser peligrosa incluso en un día cálido. Usa ropa adecuada para el agua fría, mantente alerta y no corras riesgos.</p></div></article>
+          <article class="safety-card">
+            <span class="safety-number" aria-hidden="true">01</span>
+            <span class="safety-symbol" aria-hidden="true">◉</span>
+            <h3>Wear your life jacket</h3>
+            <p>Wear a properly fitted, U.S. Coast Guard-approved life jacket when you’re in, on, or around open water.</p>
+            <div class="spanish-copy" id="safety-es-lifejacket" lang="es" hidden>
+              <span>ESPAÑOL · BORRADOR</span>
+              <p><strong>Usa tu chaleco salvavidas.</strong> Debe ser de la talla correcta y estar aprobado por la Guardia Costera de EE. UU. Úsalo dentro, sobre o cerca de aguas abiertas.</p>
+            </div>
+          </article>
+          <article class="safety-card">
+            <span class="safety-number" aria-hidden="true">02</span>
+            <span class="safety-symbol" aria-hidden="true">⌁</span>
+            <h3>Swim with a buddy</h3>
+            <p>Choose a designated swimming area, follow posted rules, and make sure a responsible adult is watching.</p>
+            <div class="spanish-copy" id="safety-es-buddy" lang="es" hidden>
+              <span>ESPAÑOL · BORRADOR</span>
+              <p><strong>Nada acompañado.</strong> Elige una zona designada para nadar, sigue las reglas publicadas y asegúrate de que un adulto responsable te vigile.</p>
+            </div>
+          </article>
+          <article class="safety-card">
+            <span class="safety-number" aria-hidden="true">03</span>
+            <span class="safety-symbol" aria-hidden="true">↗</span>
+            <h3>Reach or throw. Don’t go.</h3>
+            <p>If someone is in trouble, get an adult and call 911. Reach with something long or throw something that floats—don’t enter the water.</p>
+            <div class="spanish-copy" id="safety-es-rescue" lang="es" hidden>
+              <span>ESPAÑOL · BORRADOR</span>
+              <p><strong>Alcanza o lanza; no te metas.</strong> Si alguien está en peligro, avisa a un adulto y llama al 911. Extiende algo largo o lanza algo que flote. No entres al agua.</p>
+            </div>
+          </article>
+          <article class="safety-card">
+            <span class="safety-number" aria-hidden="true">04</span>
+            <span class="safety-symbol" aria-hidden="true">❄</span>
+            <h3>Respect cold water</h3>
+            <p>Cold water can be dangerous even on a warm day. Dress for the water, stay alert, and don’t take chances.</p>
+            <div class="spanish-copy" id="safety-es-cold" lang="es" hidden>
+              <span>ESPAÑOL · BORRADOR</span>
+              <p><strong>Ten cuidado con el agua fría.</strong> Puede ser peligrosa incluso en un día cálido. Usa ropa adecuada para el agua fría, mantente alerta y no corras riesgos.</p>
+            </div>
+          </article>
         </div>
         <p class="safety-footnote">These reminders support—not replace—local rules, adult supervision, and guidance from water safety professionals.</p>
       </div>
@@ -101,14 +174,45 @@
     <section class="visit-section" id="visit" aria-labelledby="visit-title">
       <div class="section-wrap visit-inner">
         <div class="section-heading">
-          <div><span class="section-kicker">Your next lake day starts here</span><h2 id="visit-title">Plan a safer visit.</h2></div>
+          <div>
+            <span class="section-kicker">Your next lake day starts here</span>
+            <h2 id="visit-title">Plan a safer visit.</h2>
+          </div>
           <p>Check official lake information before you go, and follow local notices and posted rules when you arrive.</p>
         </div>
         <div class="visit-grid">
-          <article class="visit-card"><span class="visit-number" aria-hidden="true">01</span><span class="visit-icon" aria-hidden="true">⌖</span><span class="visit-kicker">Explore</span><h3>Find a Tulsa District lake</h3><p>Browse lake pages for recreation areas, facilities, local rules, and project news or notices.</p><a href="https://www.swt.usace.army.mil/Locations/Tulsa-District-Lakes/" target="_blank" rel="noopener noreferrer">Browse official lake pages <span aria-hidden="true">↗</span></a></article>
-          <article class="visit-card"><span class="visit-number" aria-hidden="true">02</span><span class="visit-icon" aria-hidden="true">〰</span><span class="visit-kicker">Check</span><h3>Lake levels & water data</h3><p>Open the Tulsa District Water Control site for reservoir levels and water-management information.</p><a href="https://www.swt-wc.usace.army.mil/" target="_blank" rel="noopener noreferrer">View water data <span aria-hidden="true">↗</span></a></article>
-          <article class="visit-card"><span class="visit-number" aria-hidden="true">03</span><span class="visit-icon" aria-hidden="true">☎</span><span class="visit-kicker">Ask</span><h3>Contact a lake office</h3><p>Find project office phone numbers and the official contact form for lake-specific questions.</p><a href="https://www.swt.usace.army.mil/Contact/Contact-a-Lake/" target="_blank" rel="noopener noreferrer">Get lake office contacts <span aria-hidden="true">↗</span></a></article>
-          <article class="visit-card"><span class="visit-number" aria-hidden="true">04</span><span class="visit-icon" aria-hidden="true">⌂</span><span class="visit-kicker">Reserve</span><h3>Find camping</h3><p>Search federal recreation areas and campsites, then check the lake page for local details.</p><a href="https://www.recreation.gov/" target="_blank" rel="noopener noreferrer">Search Recreation.gov <span aria-hidden="true">↗</span></a></article>
+          <article class="visit-card">
+            <span class="visit-number" aria-hidden="true">01</span>
+            <span class="visit-icon" aria-hidden="true">⌖</span>
+            <span class="visit-kicker">Explore</span>
+            <h3>Find a Tulsa District lake</h3>
+            <p>Browse lake pages for recreation areas, facilities, local rules, and project news or notices.</p>
+            <a href="https://www.swt.usace.army.mil/Locations/Tulsa-District-Lakes/" target="_blank" rel="noopener noreferrer">Browse official lake pages <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="visit-card">
+            <span class="visit-number" aria-hidden="true">02</span>
+            <span class="visit-icon" aria-hidden="true">〰</span>
+            <span class="visit-kicker">Check</span>
+            <h3>Lake levels & water data</h3>
+            <p>Open the Tulsa District Water Control site for reservoir levels and water-management information.</p>
+            <a href="https://www.swt-wc.usace.army.mil/" target="_blank" rel="noopener noreferrer">View water data <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="visit-card">
+            <span class="visit-number" aria-hidden="true">03</span>
+            <span class="visit-icon" aria-hidden="true">☎</span>
+            <span class="visit-kicker">Ask</span>
+            <h3>Contact a lake office</h3>
+            <p>Find project office phone numbers and the official contact form for lake-specific questions.</p>
+            <a href="https://www.swt.usace.army.mil/Contact/Contact-a-Lake/" target="_blank" rel="noopener noreferrer">Get lake office contacts <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="visit-card">
+            <span class="visit-number" aria-hidden="true">04</span>
+            <span class="visit-icon" aria-hidden="true">⌂</span>
+            <span class="visit-kicker">Reserve</span>
+            <h3>Find camping</h3>
+            <p>Search federal recreation areas and campsites, then check the lake page for local details.</p>
+            <a href="https://www.recreation.gov/" target="_blank" rel="noopener noreferrer">Search Recreation.gov <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
         <p class="visit-note"><strong>Before you go:</strong> Water levels are not a measure of water quality or swimming safety. Check the individual lake’s current notices and follow all posted warnings and instructions.</p>
       </div>
@@ -116,14 +220,49 @@
 
     <section class="videos-section section-wrap" id="videos" aria-labelledby="videos-title">
       <div class="section-heading">
-        <div><span class="section-kicker">Screen time with a purpose</span><h2 id="videos-title">Watch Bobber in action.</h2></div>
+        <div>
+          <span class="section-kicker">Screen time with a purpose</span>
+          <h2 id="videos-title">Watch Bobber in action.</h2>
+        </div>
         <p>Short cartoons with big water safety lessons. Pick an episode and choose a language.</p>
       </div>
       <div class="video-grid">
-        <article class="video-card"><span class="episode">Episode 01</span><div class="video-play" aria-hidden="true">▶</div><h3>Dog Paddling Puppies</h3><div class="video-links"><a href="https://www.youtube.com/watch?v=MahvLCAvMeY" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a><a href="https://www.youtube.com/watch?v=w3-Rvg3Nn1M" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a></div></article>
-        <article class="video-card"><span class="episode">Episode 02</span><div class="video-play" aria-hidden="true">▶</div><h3>Don’t Blow a Day at the Beach</h3><div class="video-links"><a href="https://www.youtube.com/watch?v=X65Jan-2oi4" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a><a href="https://www.youtube.com/watch?v=4BBhqaPcdgs" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a></div></article>
-        <article class="video-card"><span class="episode">Episode 03</span><div class="video-play" aria-hidden="true">▶</div><h3>Sinker Has a Fit</h3><div class="video-links"><a href="https://www.youtube.com/watch?v=A7PVncKdTyQ" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a><a href="https://www.youtube.com/watch?v=uGVuEizAx2I" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a></div></article>
-        <article class="video-card"><span class="episode">Episode 04</span><div class="video-play" aria-hidden="true">▶</div><h3>Who’s Your Buddy?</h3><div class="video-links"><a href="https://www.youtube.com/watch?v=OJebZ1pcq2U" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a><a href="https://www.youtube.com/watch?v=ciY6YUUWaWM" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a></div></article>
+        <article class="video-card">
+          <span class="episode">Episode 01</span>
+          <div class="video-play" aria-hidden="true">▶</div>
+          <h3>Dog Paddling Puppies</h3>
+          <div class="video-links">
+            <a href="https://www.youtube.com/watch?v=MahvLCAvMeY" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a>
+            <a href="https://www.youtube.com/watch?v=w3-Rvg3Nn1M" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="video-card">
+          <span class="episode">Episode 02</span>
+          <div class="video-play" aria-hidden="true">▶</div>
+          <h3>Don’t Blow a Day at the Beach</h3>
+          <div class="video-links">
+            <a href="https://www.youtube.com/watch?v=X65Jan-2oi4" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a>
+            <a href="https://www.youtube.com/watch?v=4BBhqaPcdgs" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="video-card">
+          <span class="episode">Episode 03</span>
+          <div class="video-play" aria-hidden="true">▶</div>
+          <h3>Sinker Has a Fit</h3>
+          <div class="video-links">
+            <a href="https://www.youtube.com/watch?v=A7PVncKdTyQ" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a>
+            <a href="https://www.youtube.com/watch?v=uGVuEizAx2I" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="video-card">
+          <span class="episode">Episode 04</span>
+          <div class="video-play" aria-hidden="true">▶</div>
+          <h3>Who’s Your Buddy?</h3>
+          <div class="video-links">
+            <a href="https://www.youtube.com/watch?v=OJebZ1pcq2U" target="_blank" rel="noopener noreferrer">English <span aria-hidden="true">↗</span></a>
+            <a href="https://www.youtube.com/watch?v=ciY6YUUWaWM" target="_blank" rel="noopener noreferrer">Español <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
       <p class="source-note">Videos open on YouTube. Content provided by the U.S. Army Corps of Engineers National Water Safety Program.</p>
     </section>
@@ -131,11 +270,18 @@
     <section class="library-section" id="resources" aria-labelledby="resources-title">
       <div class="section-wrap library-inner">
         <div class="section-heading library-heading">
-          <div><span class="section-kicker">Free downloads for curious kids</span><h2 id="resources-title">The Bobber library.</h2></div>
+          <div>
+            <span class="section-kicker">Free downloads for curious kids</span>
+            <h2 id="resources-title">The Bobber library.</h2>
+          </div>
           <p>Color, play, and learn together. Every resource below is ready to open or print.</p>
         </div>
         <div class="library-tools">
-          <label class="search-box" for="resource-search"><span aria-hidden="true">⌕</span><input id="resource-search" type="search" aria-label="Search Bobber resources" placeholder="Search activities, posters, books…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label>
+          <label class="search-box" for="resource-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="resource-search" type="search" aria-label="Search Bobber resources" placeholder="Search activities, posters, books…" autocomplete="off">
+            <kbd aria-hidden="true">/</kbd>
+          </label>
           <div class="filters" role="group" aria-label="Filter resources">
             <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All <span id="count-all"></span></button>
             <button class="filter-button" type="button" data-filter="activity" aria-pressed="false">Activities</button>
@@ -145,38 +291,91 @@
         </div>
         <p class="results-message" id="results-message" aria-live="polite"></p>
         <div class="resource-grid" id="resource-grid"></div>
-        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">🐾</span><h3>No matching resources</h3><p>Try another search or choose a different category.</p><button class="reset-search" id="reset-search" type="button">Show everything</button></div>
-        <p class="library-note">These printable materials are shared by the <a href="https://corpslakes.erdc.dren.mil/employees/watersafety/graphics.cfm?Option=Cartoons" target="_blank" rel="noopener noreferrer">USACE National Water Safety Program</a>. Select a card to open its PDF. Check each file for available languages.</p>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">🐾</span>
+          <h3>No matching resources</h3>
+          <p>Try another search or choose a different category.</p>
+          <button class="reset-search" id="reset-search" type="button">Show everything</button>
+        </div>
+        <p class="library-note">
+          These printable materials are shared by the
+          <a href="https://corpslakes.erdc.dren.mil/employees/watersafety/graphics.cfm?Option=Cartoons" target="_blank" rel="noopener noreferrer">USACE National Water Safety Program</a>.
+          Select a card to open its PDF. Check each file for available languages.
+        </p>
       </div>
     </section>
 
     <section class="educator-section" id="educators" aria-labelledby="educator-title">
       <div class="section-wrap educator-inner">
         <div class="section-heading">
-          <div><span class="section-kicker">Bring Bobber to your program</span><h2 id="educator-title">For educators & outreach teams.</h2></div>
+          <div>
+            <span class="section-kicker">Bring Bobber to your program</span>
+            <h2 id="educator-title">For educators & outreach teams.</h2>
+          </div>
           <p>Official USACE teaching and program materials for educators, lake staff, and community partners.</p>
         </div>
         <div class="educator-grid">
-          <article class="educator-card"><span class="educator-label">Teaching guide · Grades 2–6</span><h3>Bobber & the PFD program</h3><p>An interpretive water-safety guide with a Bobber life-jacket program outline, activities, and presentation ideas.</p><a href="assets/Water%20Safety%20Resource%20Guide%202021.pdf" target="_blank" rel="noopener">Open the USACE program guide <span aria-hidden="true">↗</span></a></article>
-          <article class="educator-card"><span class="educator-label">Official program PDF · Grades K–4</span><h3>Bobber’s Golden Rules</h3><p>A 30-minute lesson outline for teaching students Bobber’s four Golden Rules for staying safe in or near water.</p><a href="assets/Bobber%20Water%20Safety%20Golden%20Rules.pdf" target="_blank" rel="noopener">Open Golden Rules PDF <span aria-hidden="true">↗</span></a></article>
-          <article class="educator-card"><span class="educator-label">USACE staff resource</span><h3>Costume care & use</h3><p>Review official care and use guidance before planning a Bobber costume appearance or outreach event.</p><a href="assets/Bobber%20Costume%20Care%20and%20Use%20Guidelines.pdf" target="_blank" rel="noopener">Open costume guidelines PDF <span aria-hidden="true">↗</span></a></article>
+          <article class="educator-card">
+            <span class="educator-label">Teaching guide · Grades 2–6</span>
+            <h3>Bobber & the PFD program</h3>
+            <p>An interpretive water-safety guide with a Bobber life-jacket program outline, activities, and presentation ideas.</p>
+            <a href="assets/pdfs/Water%20Safety%20Resource%20Guide%202021.pdf" target="_blank" rel="noopener">Open the USACE program guide <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="educator-card">
+            <span class="educator-label">Official program PDF · Grades K–4</span>
+            <h3>Bobber’s Golden Rules</h3>
+            <p>A 30-minute lesson outline for teaching students Bobber’s four Golden Rules for staying safe in or near water.</p>
+            <a href="assets/pdfs/Bobber%20Water%20Safety%20Golden%20Rules.pdf" target="_blank" rel="noopener">Open Golden Rules PDF <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="educator-card">
+            <span class="educator-label">USACE staff resource</span>
+            <h3>Costume care & use</h3>
+            <p>Review official care and use guidance before planning a Bobber costume appearance or outreach event.</p>
+            <a href="assets/pdfs/Bobber%20Costume%20Care%20and%20Use%20Guidelines.pdf" target="_blank" rel="noopener">Open costume guidelines PDF <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
         <p class="educator-note">These local copies are official USACE materials. Check the <a href="https://corpslakes.erdc.dren.mil/employees/watersafety/bobber.cfm" target="_blank" rel="noopener noreferrer">Bobber program page</a> for updated versions.</p>
       </div>
     </section>
 
     <section class="closing section-wrap">
-      <img class="closing-logo" src="assets/bobber-logo.png" alt="Bobber the Water Safety Dog"><div><span class="section-kicker">Before you head out</span><h2>Have a plan. Wear a life jacket. Look out for each other.</h2></div><a class="button button-dark" href="#safety">Remember the basics <span aria-hidden="true">↑</span></a>
+      <img class="closing-logo" src="assets/bobber-logo.png" alt="Bobber the Water Safety Dog">
+      <div>
+        <span class="section-kicker">Before you head out</span>
+        <h2>Have a plan. Wear a life jacket. Look out for each other.</h2>
+      </div>
+      <a class="button button-dark" href="#safety">Remember the basics <span aria-hidden="true">↑</span></a>
     </section>
   </main>
 
   <footer class="site-footer">
-      <div class="footer-inner">
-      <div class="footer-brand"><a class="brand brand-light" href="#top"><img class="brand-logo" src="assets/bobber-logo.png" alt=""><span class="brand-copy"><strong>Bobber</strong><small>Water Safety Dog</small></span></a><p>A water safety education resource from the U.S. Army Corps of Engineers, Tulsa District.</p></div>
-      <div class="footer-links"><span class="footer-label">Keep exploring</span><a href="#safety">Water safety basics</a><a href="#visit">Plan a lake visit</a><a href="#videos">Bobber cartoons</a><a href="#resources">Printable resources</a><a href="#educators">Educator materials</a></div>
-      <div class="footer-links"><span class="footer-label">Official resources</span><a href="https://www.usace.army.mil/Missions/Civil-Works/Recreation/National-Water-Safety_Program/" target="_blank" rel="noopener noreferrer">National Water Safety Program ↗</a><a href="https://corpslakes.erdc.dren.mil/employees/watersafety/bobber.cfm" target="_blank" rel="noopener noreferrer">Bobber program ↗</a><a href="https://www.swt.usace.army.mil/" target="_blank" rel="noopener noreferrer">Tulsa District ↗</a></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand brand-light" href="#top">
+          <img class="brand-logo" src="assets/bobber-logo.png" alt="">
+          <span class="brand-copy"><strong>Bobber</strong><small>Water Safety Dog</small></span>
+        </a>
+        <p>A water safety education resource from the U.S. Army Corps of Engineers, Tulsa District.</p>
+      </div>
+      <div class="footer-links">
+        <span class="footer-label">Keep exploring</span>
+        <a href="#safety">Water safety basics</a>
+        <a href="#visit">Plan a lake visit</a>
+        <a href="#videos">Bobber cartoons</a>
+        <a href="#resources">Printable resources</a>
+        <a href="#educators">Educator materials</a>
+      </div>
+      <div class="footer-links">
+        <span class="footer-label">Official resources</span>
+        <a href="https://www.usace.army.mil/Missions/Civil-Works/Recreation/National-Water-Safety_Program/" target="_blank" rel="noopener noreferrer">National Water Safety Program ↗</a>
+        <a href="https://corpslakes.erdc.dren.mil/employees/watersafety/bobber.cfm" target="_blank" rel="noopener noreferrer">Bobber program ↗</a>
+        <a href="https://www.swt.usace.army.mil/" target="_blank" rel="noopener noreferrer">Tulsa District ↗</a>
+      </div>
     </div>
-    <div class="footer-bottom"><span>U.S. Army Corps of Engineers · Tulsa District</span><a href="https://www.usace.army.mil/" target="_blank" rel="noopener noreferrer">Official U.S. Army website ↗</a></div>
+    <div class="footer-bottom">
+      <span>U.S. Army Corps of Engineers · Tulsa District</span>
+      <a href="https://www.usace.army.mil/" target="_blank" rel="noopener noreferrer">Official U.S. Army website ↗</a>
+    </div>
   </footer>
   <dialog class="easter-dialog" id="easter-dialog" aria-labelledby="easter-title" aria-describedby="easter-copy">
     <div class="easter-confetti" id="easter-confetti" aria-hidden="true"></div>
@@ -185,8 +384,13 @@
     <p class="easter-kicker" id="easter-kicker">Secret mission unlocked</p>
     <h2 id="easter-title">You found Bobber!</h2>
     <p id="easter-copy">Your secret mission: bring a buddy, wear a life jacket, and share one water-safety tip.</p>
-    <button class="button button-coral" id="easter-return" type="button"><span id="easter-return-label">Back to the adventure</span><span aria-hidden="true">→</span></button>
+    <button class="button button-coral" id="easter-return" type="button">
+      <span id="easter-return-label">Back to the adventure</span>
+      <span aria-hidden="true">→</span>
+    </button>
   </dialog>
-  <script src="script.js" defer></script>
+  <script src="data/resources.js" defer></script>
+  <script src="data/translations.js" defer></script>
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>
