@@ -511,7 +511,7 @@ easterDialog.addEventListener("click", (event) => {
   if (event.target === easterDialog) easterDialog.close();
 });
 
-const konamiSequence = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+const konamiSequence = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 let konamiProgress = 0;
 document.addEventListener("keydown", (event) => {
   if (easterDialog.open || event.repeat || event.altKey || event.ctrlKey || event.metaKey) return;
